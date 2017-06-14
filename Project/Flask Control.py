@@ -48,7 +48,7 @@ def download():
 @app.route('/excel2', methods=['POST'])
 def excel():
     uploads = app.config["UPLOAD_FOLDER"] = app.root_path
-    fileName = "Aap.xlsx"
+    fileName = "TextMiner.xlsx"
     return send_from_directory(directory=uploads, filename = fileName)
 
 if __name__ == '__main__':
