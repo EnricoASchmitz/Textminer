@@ -157,21 +157,21 @@ def createExcelFile(mostOccuringWords, dictionaryOfAllPubMedIds):
             KeyCol = alpha[index]+str(count)
             
             Pub[KeyCol] = int(key)
-            i = 0
+            inte = 0
             
             for items in value:
-                if i < len(value)-1:
+                if inte < len(value)-1:
                     index += 1
                     ValCol = alpha[index]+str(count)
-                    val = str(value[i])
+                    val = str(value[inte])
                     val = val.replace("['", "")
                     Pub[ValCol] = val.replace("']", "")
-                    i += 1
+                    inte += 1
                 
         
             count +=1
         
-        wb.save('Miner.xlsx')
+        wb.save('TextMiner.xlsx')
             
         
          
@@ -183,7 +183,7 @@ def createExcelFile(mostOccuringWords, dictionaryOfAllPubMedIds):
             ws[KeyCol] = key.replace("'","")
             ws[ValCol] = value
             count +=1
-        wb.save('Miner.xlsx')
+        wb.save('TextMiner.xlsx')
 
 
     except(PermissionError):
